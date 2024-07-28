@@ -1,3 +1,4 @@
+/* Stili generali per il sito */
 body, html {
     height: 100%;
     margin: 0;
@@ -5,9 +6,8 @@ body, html {
 }
 
 .background {
-    /* Usa l'immagine come sfondo */
+    /* Usa l'immagine come sfondo per desktop */
     background-image: url('Vane.jpg');
-    /* Assicura che l'immagine copra l'intero schermo */
     background-size: cover;
     background-position: center;
     height: 100%;
@@ -38,10 +38,39 @@ body, html {
     font-size: 3em; /* Aumenta la dimensione del font del countdown */
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Aggiungi ombra al testo */
+    color: #ff007f; /* Colore rosa per il countdown */
 }
 
 p {
     margin-top: 20px;
     font-size: 1.2em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Aggiungi ombra al testo */
+}
+
+/* Media query per dispositivi con una larghezza massima di 768px (tablet e smartphone) */
+@media (max-width: 768px) {
+    .background {
+        background-image: url('Vane-1080x1920.jpg'); /* Usa l'immagine per dispositivi mobili */
+        background-size: cover;
+        background-position: center;
+        padding-right: 0; /* Elimina il padding per adattarsi meglio */
+    }
+
+    .container {
+        padding: 10px;
+        width: 90%; /* Rende il contenitore più largo per dispositivi mobili */
+        margin: 0 auto; /* Centra il contenitore */
+    }
+
+    .large-number {
+        font-size: 2.5em; /* Riduce la dimensione del numero per dispositivi mobili */
+    }
+
+    #countdown {
+        font-size: 2.5em; /* Riduce la dimensione del countdown per dispositivi mobili */
+    }
+
+    p {
+        font-size: 1em; /* Riduce la dimensione del testo per dispositivi mobili */
+    }
 }
