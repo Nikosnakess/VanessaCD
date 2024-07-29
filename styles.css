@@ -13,7 +13,8 @@ body, html {
     height: 100%;
     display: flex;
     justify-content: center; /* Centra il contenitore orizzontalmente */
-    align-items: center;
+    align-items: flex-start; /* Allinea il contenitore in alto */
+    padding-top: 20px; /* Aggiungi un po' di spazio in alto */
 }
 
 .container {
@@ -23,6 +24,7 @@ body, html {
     border-radius: 10px;
     border: 2px solid black; /* Traccia nera */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Aggiungi ombra al riquadro */
+    max-width: 90%; /* Limita la larghezza massima del riquadro */
 }
 
 .large-number {
@@ -46,5 +48,3 @@ p {
     font-size: 1.2em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Aggiungi ombra al testo */
 }
-
-/* Nessuna media query necessaria, poiché il sito è progettato solo per dispositivi mobili */
