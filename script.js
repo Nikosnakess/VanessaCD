@@ -1,38 +1,50 @@
-// Verifica se la data di fine è già salvata in localStorage
-let endDate = localStorage.getItem('countDownDate');
-
-if (!endDate) {
-    // Imposta la data di fine a 50 giorni da oggi e salvala in localStorage
-    let countDownDate = new Date();
-    countDownDate.setDate(countDownDate.getDate() + 50);
-    endDate = countDownDate.getTime();
-    localStorage.setItem('countDownDate', endDate);
-} else {
-    // Recupera la data di fine salvata in localStorage
-    endDate = parseInt(endDate, 10);
+/* Stili generali per il sito */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif; /* Font normale per il testo */
 }
 
-// Aggiorna il conto alla rovescia ogni secondo
-let x = setInterval(function() {
-    // Ottieni la data e l'ora attuali
-    let now = new Date().getTime();
-    
-    // Calcola la distanza tra adesso e la data di fine
-    let distance = endDate - now;
-    
-    // Calcola i giorni, ore, minuti e secondi
-    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-    // Visualizza il risultato nell'elemento con id="countdown"
-    document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
-    + minutes + "m " + seconds + "s ";
-    
-    // Se il conto alla rovescia è finito, scrivi un messaggio
-    if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("countdown").innerHTML = "CONTO ALLA ROVESCIA TERMINATO";
-    }
-}, 1000);
+.background {
+    /* Usa l'immagine come sfondo per dispositivi mobili */
+    background-image: url('Vane2.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    justify-content: center; /* Centra il contenitore orizzontalmente */
+    align-items: flex-start; /* Allinea il contenitore in alto */
+    padding-top: 20px; /* Aggiungi un po' di spazio in alto */
+}
+
+.container {
+    text-align: center; /* Centra tutto il testo */
+    background-color: rgba(255, 255, 0, 0.8); /* Sfondo giallo trasparente per il testo */
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid black; /* Traccia nera */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Aggiungi ombra al riquadro */
+    max-width: 90%; /* Limita la larghezza massima del riquadro */
+}
+
+.large-number {
+    font-size: 3em;
+    display: block;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Aggiungi ombra al testo */
+    color: #ff007f; /* Colore rosa per il numero -50 */
+}
+
+#countdown {
+    font-family: 'Impact', sans-serif; /* Font Impact per il countdown */
+    font-size: 3em; /* Aumenta la dimensione del font del countdown */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Aggiungi ombra al testo */
+    color: #ff007f; /* Colore rosa per il countdown */
+}
+
+p {
+    margin-top: 20px;
+    font-size: 1.2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Aggiungi ombra al testo */
+}
