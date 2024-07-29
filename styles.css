@@ -6,8 +6,6 @@ body, html {
 }
 
 .background {
-    /* Usa l'immagine come sfondo per dispositivi mobili */
-    background-image: url('Vane2.jpg');
     background-size: cover;
     background-position: center;
     height: 100%;
@@ -15,6 +13,20 @@ body, html {
     justify-content: center; /* Centra il contenitore orizzontalmente */
     align-items: flex-start; /* Allinea il contenitore in alto */
     padding-top: 20px; /* Aggiungi un po' di spazio in alto */
+}
+
+/* Specifico per il mobile */
+@media (max-width: 767px) {
+    .background {
+        background-image: url('Vane2.jpg');
+    }
+}
+
+/* Specifico per il desktop */
+@media (min-width: 768px) {
+    .background {
+        background-image: url('Vane.jpg');
+    }
 }
 
 .container {
